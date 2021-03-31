@@ -94,3 +94,21 @@ def plot_top_n_bigram(corpus, n):
     count_df = pd.DataFrame(words_freq[:n], columns = ['bigram' , 'count']).sort_values('count')
     fig = go.Figure(go.Bar( y=count_df['bigram'], x=count_df['count'],  orientation='h'))
     fig.show() 
+    
+    
+    
+    
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+import matplotlib.pyplot as plt
+
+def plot_wordcloud(text, stopwords=[], max_words=50):
+    """This function plots the wordcloud of a text after excluding the stopwords"""
+  
+    #adding custom stopwords to the main ones
+    stopwords = set(STOPWORDS).update(stopwords)
+    
+    wordcloud = WordCloud(width = 650, height = 650, stopwords=stopwords, max_font_size=90, max_words=max_words, background_color="white").generate(text)
+    plt.figure(figsize=(10, 10))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
