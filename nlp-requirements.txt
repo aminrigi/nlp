@@ -13,7 +13,6 @@ en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_
 folium==0.12.1
 funcy==1.15
 future==0.18.2
-gensim==3.8.3
 idna==2.10
 iniconfig==1.1.1
 jedi==0.18.0

@@ -19,7 +19,7 @@ def get_sentiments(df, textCol):
     It then adds a column named sentiment. With sentiment scores. If sentiment
     is less than zero, it's negative; otherwise positive.
     """
-    df['sentiment'] = df['comment'].apply(get_sentiment_bert)
+    df['sentiment'] = df[textCol].apply(get_sentiment_bert)
     
     return df
     
